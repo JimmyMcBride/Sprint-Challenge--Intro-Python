@@ -1,4 +1,6 @@
 import csv
+import sys
+print(sys.path)
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
 
@@ -26,7 +28,7 @@ def cityreader(cities=[]):
     # TODO Implement the functionality to read from the 'cities.csv' file
     # For each city record, create a new City instance and add it to the 
     # `cities` list
-    with open("/home/jim/Documents/lambda/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv", newline="") as csvfile:
+    with open(sys.path[0] + "/cities.csv", newline="") as csvfile:
         data = csv.reader(csvfile, delimiter=",")
         for i, city in enumerate(data):
             if i != 0:
